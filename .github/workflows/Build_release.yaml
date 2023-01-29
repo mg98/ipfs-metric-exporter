@@ -13,15 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: ipfs-mexport-builder
-        uses: macbre/push-to-ghcr@master
-        with:
-          image_name: ${{ github.repository_owner }}/ipfs-mexport-builder
-          dockerfile: Dockerfile.builder
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: kubo-mexport
+      - name: Build and push image
         uses: macbre/push-to-ghcr@master
         with:
           image_name: ${{ github.repository_owner }}/kubo-mexport
-          dockerfile: Dockerfile.kubo
           github_token: ${{ secrets.GITHUB_TOKEN }}
