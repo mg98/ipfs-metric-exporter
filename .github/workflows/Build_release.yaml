@@ -22,6 +22,6 @@ jobs:
       - name: kubo-mexport
         uses: macbre/push-to-ghcr@master
         with:
-          image_name: kubo-mexport
-          dockerfile: ${{ secrets.GITHUB_REPOSITORY_OWNER }}/Dockerfile.kubo
+          image_name: ${{ secrets.GITHUB_REPOSITORY_OWNER }}/kubo-mexport
+          dockerfile: Dockerfile.kubo
           github_token: ${{ secrets.GITHUB_TOKEN }}
